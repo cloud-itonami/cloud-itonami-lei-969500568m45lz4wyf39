@@ -20,6 +20,8 @@ company's behalf, and is not a governed Advisor/Governor actor.
 ## Contents
 
 - `80-data/public/tos.journal.edn` — EDN quad-log of archived legal notice documents.
+- `facts.edn` — verified public-registry facts (GLEIF), each with the URL it was read from and the retrieval time. Generated; do not hand-edit.
+- `scripts/verify-facts.cljs` — re-fetches every source `facts.edn` cites and fails if the live registry no longer agrees (`nbb scripts/verify-facts.cljs`; exit 0 = match, 1 = drift/broken citation, 3 = could not check). Vendored from `com-junkawasaki/root`.
 - `NOTICE` — copyright/attribution statement for the archived third-party text.
 - `blueprint.edn` — machine-readable company identity record.
 
